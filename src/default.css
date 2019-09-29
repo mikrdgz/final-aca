@@ -1,0 +1,18 @@
+.paragraph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: row;
+    align-items: center;
+    align-content: center;
+    margin-right: 15px;
+    padding: 3%;
+    text-align: justify;
+  }
+  
+.paragraph-container img{
+    width: 350px;
+}
+
+.navspace {
+    padding-top: 40px;
+}
