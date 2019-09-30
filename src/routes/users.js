@@ -11,7 +11,7 @@ router.get('/users', list);
 
   router.put('/users/:userId', update);
 
-  router.delete('/users', remove);
+  // router.delete('/users', remove);
 
   module.exports = router;
 
