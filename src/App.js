@@ -5,19 +5,21 @@ import './default.css'
 import ParagraphTextLeft from "./components/paragraphtextleft";
 import ParagraphTextRight from "./components/paragraphtextright";
 import NavName from "./components/navigation";
+import SignUp from "./components/signup";
+import SignIn from "./components/signin";
 
+class App extends React.Component {
 
-function App() {
-  return (
-
-    <div className="App"> 
-      <Flex justifyContent="space-between" flexDirection="row">
-            <Flex.Item>
-                <H2><NavName name="sunshine" /></H2>
-            </Flex.Item>
-            <Flex.Item>
-                <Button variant="secondary" marginRight="medium">sign up</Button>  <Button variant="secondary">sign in</Button>
-            </Flex.Item>
+  render() {
+    return (
+      <div className="App"> 
+        <Flex justifyContent="space-between" flexDirection="row">
+          <Flex.Item>
+            <H2><NavName name="sunshine" /></H2>
+          </Flex.Item>
+        <Flex.Item>
+          <SignUp /><SignIn />
+        </Flex.Item>
       </Flex>
       <div class="navspace">
         <Text><H0>Is it paleo?</H0>
@@ -54,6 +56,7 @@ function App() {
     </div>
 
   );
+}
 }
 
 
