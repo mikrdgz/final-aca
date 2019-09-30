@@ -8,6 +8,7 @@ import NavName from "./components/navigation";
 import SignUp from "./components/signup";
 import SignIn from "./components/signin";
 
+
 class App extends React.Component {
 
   render() {
@@ -61,5 +62,3 @@ class App extends React.Component {
 
 
 export default App;
-
-
