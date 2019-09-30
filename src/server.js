@@ -21,8 +21,6 @@ const dbUrl =
 mongoose.connect(dbUrl, { useNewUrlParser: true });
 
 
-
-
 const thePort = 3000;
 
 app.listen(thePort, err => {
