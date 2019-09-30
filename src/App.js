@@ -5,6 +5,7 @@ import './default.css'
 import ParagraphTextLeft from "./components/paragraphtextleft";
 import ParagraphTextRight from "./components/paragraphtextright";
 import NavName from "./components/navigation";
+import { expression } from '@babel/template';
 
 
 function App() {
@@ -58,5 +59,3 @@ function App() {
 
 
 export default App;
-
-

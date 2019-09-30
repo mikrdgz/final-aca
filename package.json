@@ -31,6 +31,7 @@
   "devDependencies": {
     "@bigcommerce/big-design": "^0.11.1",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "styled-components": "^4.4.0"
