@@ -6,7 +6,7 @@ let app = express();
 
 
 //user route
-var users = require('./routes/users');
+var users = require('./src/routes/users');
 
 
 app.use(express.static("public"));

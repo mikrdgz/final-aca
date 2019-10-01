@@ -1,9 +1,19 @@
 import React from  'react';
 
-function NavName(props) {
-    return (
-        <div>Welcome, {props.name}!</div>
-    )
-  }
+class NavName extends React.Component {
+    state = {
+        isOpen:false
+
+    }
+
+    method = () => {
+
+    }
+
+    render (){
+           return <div>Welcome, {this.props.name}!</div>
+    }
+}
+           
   
-  export default NavName;
+export default NavName;
