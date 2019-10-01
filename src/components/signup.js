@@ -1,8 +1,20 @@
-import React from  'react';
+import React, {Component} from  'react';
 import { H2, Flex, Text, Panel, Button, GlobalStyles, H0, H1, Modal, Form, Input, Box } from '@bigcommerce/big-design';
 
 
 function SignUp() {
+
+    const handleSignUp = () => {
+      setIsOpen(false);
+
+      fetch('/users/',{
+        method: 'POST',
+        headers: {
+          'Content/Type': 'application/json'
+        }
+        body: 
+      })
+    }}
 
     const [isOpen, setIsOpen] = React.useState(false);
   
@@ -41,7 +53,7 @@ function SignUp() {
               Cancel
             </Button>
 
-            <Button variant="secondary" onClick={() => setIsOpen(false)}>
+            <Button variant="secondary" onClick={() => handleSignUp} >
                 sign up
             </Button>
           </Modal.Actions>
@@ -50,3 +62,4 @@ function SignUp() {
     );
   }
 export default SignUp;
+
