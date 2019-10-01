@@ -1,16 +1,17 @@
 import React from  'react';
 
-function ParagraphTextRight(props) {
-    return (
+class ParagraphTextRight extends React.Component {
+    render(){
+      return(
       <div class="paragraph-container">
       <div>
-        <h1>{props.title}</h1>
-        {props.text}
+        <h1>{this.props.title}</h1>
+        {this.props.text}
       </div>
-      <img src={props.image}></img>
+      <img src={this.props.image}></img>
       </div>
 
-    )
+    )}
   }
   
   export default ParagraphTextRight;

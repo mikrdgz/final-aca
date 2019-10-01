@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "nodemon": "^1.19.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
@@ -12,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "both": "concurrently  \"npm start\" \"node server.js\""
+    "both": "concurrently \"npm start\" \"nodemon server.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +37,6 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "styled-components": "^4.4.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

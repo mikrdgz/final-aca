@@ -14,8 +14,29 @@ import {
   Box
 } from "@bigcommerce/big-design";
 
-class SignUp extends React.Component {
-  state = {};
+class SignUp extends Component {
+  
+  submitUser =()=>{
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    }
+    fetch("/users", {
+      method: "post",
+      body: newUser,
+      mode: "no-cors"
+    }).then((res,err)=> res.json).then((res)=>console.log(res))
+    this.closeModal()
+  }
+
+  state = {
+    name: "",
+    email: "",
+    password: ""
+  };
+
+  onTextChange = e => this.setState({ [e.target.name]: e.target.value });
 
   openModal = () => {
     this.setState({ isOpen: true });
@@ -42,16 +63,27 @@ class SignUp extends React.Component {
           <Modal.Body>
             <Form>
               <Form.Group>
-                <Input label="Name" type="name" placeholder="Name" />
+                <Input
+                  label="Name"
+                  name="name"
+                  placeholder="Name"
+                  onChange={this.onTextChange}
+                />
               </Form.Group>
               <Form.Group>
-                <Input label="Email" type="email" placeholder="Email address" />
+                <Input
+                  label="Email"
+                  name="email"
+                  placeholder="Email address"
+                  onChange={this.onTextChange}
+                />
               </Form.Group>
               <Form.Group>
                 <Input
                   label="Password"
-                  type="password"
+                  name="password"
                   placeholder="Password"
+                  onChange={this.onTextChange}
                 />
               </Form.Group>
             </Form>
@@ -62,8 +94,8 @@ class SignUp extends React.Component {
               Cancel
             </Button>
 
-            <Button variant="secondary" onClick={this.closeModal}>
-              sign up
+            <Button variant="secondary" onClick={this.submitUser} >
+              Sign Up
             </Button>
           </Modal.Actions>
         </Modal>
