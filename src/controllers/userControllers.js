@@ -20,7 +20,7 @@ return res.json(users)
 
 exports.create = (req,res) => {
     const newUser = new User(req.body);
-    console.log('body', req.body);
+    console.log(req);
     newUser.save((err,user)=>
     res.json(user)
    )

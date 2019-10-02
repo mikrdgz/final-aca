@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import {
   H2,
   Flex,
@@ -16,18 +17,25 @@ import {
 
 class SignUp extends Component {
   
-  submitUser =()=>{
+  submitUser =(e)=>{
     const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password
     }
+    console.log('newuser', newUser)
     fetch("/users", {
       method: "post",
-      body: newUser,
-      mode: "no-cors"
-    }).then((res,err)=> res.json).then((res)=>console.log(res))
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newUser)
+      
+    })
+    // axios.post('/users', newUser)
+    //   .then(res => res.json)
+    //   .catch(console.log)
     this.closeModal()
+
+
   }
 
   state = {
