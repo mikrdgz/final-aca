@@ -1,36 +1,70 @@
-import React, { Component } from 'react';
-const API = 'https://api.edamam.com/api/food-database/parser?ingr=apple&app_id=a80be76b&app_key=515b81c153ce8fd8518c687922f95767';
+import React, { Component } from "react";
+import { Form, Input, Flex, Button } from "@bigcommerce/big-design";
 
 class Search extends Component {
+  state = {
+    searchParam: "",
+    food: ""
+  };
+
+  onTextChange = e => {
+    this.setState({ searchParam: e.target.value });
+  };
+
+  makeReqs = () => {
+    const foodGet = `https://api.edamam.com/api/food-database/parser?ingr=${this.state.searchParam}&app_id=a80be76b&app_key=515b81c153ce8fd8518c687922f95767`;
+
+    const foodPost =
+      "https://api.edamam.com/api/food-database/nutrients?app_id=a80be76b&app_key=515b81c153ce8fd8518c687922f95767";
+
+    fetch(foodGet)
+      .then((res) =>
+        res.json()).then (res =>
+            this.setState({food: res.parsed[0].food.foodId})
+        )
+      .then( (data) => {
+        return fetch(foodPost, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            ingredients: [
+              {
+                quantity: 1,
+                measureURI:
+                  "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                foodId: this.state.food
+              }
+            ]
+          })
+        }).then(res => res.json()).then((res)=>{
+            if(res.healthLabels.includes("PALEO")){
+                console.log("True")
+            }
+
+        else {
+            if(!res.healthLabels.includes("PALEO")){
+                console.log("False")
+            }
+        }
+        })
+      });
+  };
 
 
-state = {
-hits: [],
-};
-
-componentDidMount() {
-fetch(API)
-.then(response => response.json())
-.then(data => {
-console.log('hits', data)
-this.setState({ hits: data.hits })
-});
-}
-
-render() {
-console.log(this.state);
-const { hits } = this.state;
-return (
-<ul>
-{hits.map(hit =>
-<li key={hit.objectID}>
-<a href={hit.url}>{hit.title}</a>
-</li>
-)}
-</ul>
-);
-}
-
-
+  render() {
+    return (
+      <Flex paddingBottom="xxLarge" justifyContent="center">
+        <Flex.Item>
+          <Form.Group>
+            <Input name="Search" type="text" onChange={this.onTextChange} />
+          </Form.Group>
+          <Button variant="primary" onClick={this.makeReqs}>Search</Button>
+        </Flex.Item>
+      </Flex>
+    );
+  }
 }
 export default Search;
+//   

@@ -3,11 +3,8 @@ import React from  'react';
 class NavName extends React.Component {
     state = {
         isOpen:false
-
     }
-
     method = () => {
-
     }
 
     render (){
