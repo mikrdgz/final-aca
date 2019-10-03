@@ -45,7 +45,7 @@ class Search extends Component {
 
         else {
             if(!res.healthLabels.includes("PALEO")){
-                console.log("False")
+                console.log("nope")
             }
         }
         })
