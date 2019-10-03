@@ -1,7 +1,4 @@
-## Food Tracker App
+## Paleo App
 
-USDA API Key:
-- ERzAA0Ao2NLTbhab6kakFviVfjUISQvyviiVfPol
-
-Request URL:
-- https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=ERzAA0Ao2NLTbhab6kakFviVfjUISQvyviiVfPol&location=Denver+CO
+Paleo App tells you whether or not the foods you love are Paleo.
+Built with React and [BigDesign](https://developer.bigcommerce.com/big-design/)
