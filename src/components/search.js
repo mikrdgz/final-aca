@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Flex, Button, Panel } from "@bigcommerce/big-design";
-import Results from './resultModal';
+import Result from './resultModal';
 
 class Search extends Component {
   state = {
@@ -9,16 +9,17 @@ class Search extends Component {
     result: ""
   };
 
-  componentWillUpdate =()=>{
+  //componentWillUpdate =()=>{
       
-        document.getElementById('resultDiv').innerHTML = `${this.state.result}`
-  }
+        //document.getElementById('resultDiv').innerHTML = `${this.state.result}`
+  //}
 
   onTextChange = e => {
     this.setState({ searchParam: e.target.value });
   };
 
   makeReqs = () => {
+    this.setState({result: ""})
     const foodGet = `https://api.edamam.com/api/food-database/parser?ingr=${this.state.searchParam}&app_id=a80be76b&app_key=515b81c153ce8fd8518c687922f95767`;
 
     const foodPost =
@@ -46,6 +47,7 @@ class Search extends Component {
         })
           .then(res => res.json())
           .then(res => {
+              console.log(res.calories );
             if (res.healthLabels.includes("PALEO")) {
             this.setState({result: "paleo"})
             } else {
@@ -59,19 +61,35 @@ class Search extends Component {
       });
   };
   render() {
-    return (
-      <Flex paddingBottom="xxLarge" justifyContent="center">
-        <Flex.Item>
-          <Form.Group>
-            <Input name="Search" type="text" onChange={this.onTextChange} value={this.state.searchParam }/>
-          </Form.Group>
-          <Button variant="primary" onClick={this.makeReqs}>
-            Search
-          </Button>
-          <div id="resultDiv"></div>
-        </Flex.Item>
-      </Flex>
-    );
+      if(this.state.result != ""){
+        return (
+            <Flex paddingBottom="xxLarge" justifyContent="center">
+              <Flex.Item>
+                <Form.Group>
+                  <Input name="Search" type="text" onChange={this.onTextChange} value={this.state.searchParam }/>
+                </Form.Group>
+                <Button variant="primary" onClick={this.makeReqs}>
+                  Search
+                </Button>
+                <Result result={this.state.result}/>
+              </Flex.Item>
+            </Flex>
+          );
+      } else {
+        return (
+            <Flex paddingBottom="xxLarge" justifyContent="center">
+              <Flex.Item>
+                <Form.Group>
+                  <Input name="Search" type="text" onChange={this.onTextChange} value={this.state.searchParam }/>
+                </Form.Group>
+                <Button variant="primary" onClick={this.makeReqs}>
+                  Search
+                </Button>
+              </Flex.Item>
+            </Flex>
+          );
+      }
+    
   }
 }
 export default Search;

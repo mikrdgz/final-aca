@@ -3,6 +3,7 @@ import { Button,
     Modal,
     Form,
     Input } from "@bigcommerce/big-design";
+import Search from './search';
 
 class ResultModal extends React.Component {
 
@@ -16,6 +17,7 @@ class ResultModal extends React.Component {
       };  
 
     render(){
+        console.log('props',this.props)
         return (
             <>
       
@@ -28,7 +30,7 @@ class ResultModal extends React.Component {
                 <Modal.Header>Is it Paleo?</Modal.Header>
       
                 <Modal.Body>
-                  this food is paleo
+                    Paleo: {this.props.result}
                 </Modal.Body>
       
                 <Modal.Actions>
