@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./components/home"
 import {
  
-  // GlobalStyles
+  GlobalStyles
   
 } from "@bigcommerce/big-design";
 import "./App.css";
@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
    return (
      <>
-     {/* <GlobalStyles/> */}
+     <GlobalStyles/>
      <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home}></Route>
