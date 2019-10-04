@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { Form, Input, Flex, Button } from "@bigcommerce/big-design";
+import { Form, Input, Flex, Button, Panel } from "@bigcommerce/big-design";
+import Results from './resultModal';
 
 class Search extends Component {
   state = {
     searchParam: "",
-    food: ""
+    food: "",
+    result: ""
   };
+
+  componentWillUpdate =()=>{
+      
+        document.getElementById('resultDiv').innerHTML = `${this.state.result}`
+  }
 
   onTextChange = e => {
     this.setState({ searchParam: e.target.value });
@@ -40,13 +47,14 @@ class Search extends Component {
           .then(res => res.json())
           .then(res => {
             if (res.healthLabels.includes("PALEO")) {
-              console.log("True");
+            this.setState({result: "paleo"})
             } else {
               if (!res.healthLabels.includes("PALEO")) {
-                console.log("nope");
+                this.setState({result: "is Not Paleo"})
               }
             }
-            this.setState({ searchParam: '' });
+            this.setState({searchParam: ''})
+            
           })
       });
   };
@@ -60,6 +68,7 @@ class Search extends Component {
           <Button variant="primary" onClick={this.makeReqs}>
             Search
           </Button>
+          <div id="resultDiv"></div>
         </Flex.Item>
       </Flex>
     );
