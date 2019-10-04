@@ -1,42 +1,27 @@
 import React, { Component } from "react";
 import axios from "axios";
 import {
-  H2,
-  Flex,
-  Text,
-  Panel,
   Button,
-  GlobalStyles,
-  H0,
-  H1,
   Modal,
   Form,
-  Input,
-  Box
+  Input
 } from "@bigcommerce/big-design";
 
 class SignUp extends Component {
-  
-  submitUser =(e)=>{
+  submitUser = e => {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password
-    }
-    console.log('newuser', newUser)
+    };
+    console.log("newuser", newUser);
     fetch("/users", {
       method: "post",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser)
-      
-    })
-    // axios.post('/users', newUser)
-    //   .then(res => res.json)
-    //   .catch(console.log)
-    this.closeModal()
-
-
-  }
+    });
+    this.closeModal();
+  };
 
   state = {
     name: "",
@@ -102,7 +87,7 @@ class SignUp extends Component {
               Cancel
             </Button>
 
-            <Button variant="secondary" onClick={this.submitUser} >
+            <Button variant="secondary" onClick={this.submitUser}>
               Sign Up
             </Button>
           </Modal.Actions>

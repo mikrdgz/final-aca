@@ -18,11 +18,9 @@ class Search extends Component {
       "https://api.edamam.com/api/food-database/nutrients?app_id=a80be76b&app_key=515b81c153ce8fd8518c687922f95767";
 
     fetch(foodGet)
-      .then((res) =>
-        res.json()).then (res =>
-            this.setState({food: res.parsed[0].food.foodId})
-        )
-      .then( (data) => {
+      .then(res => res.json())
+      .then(res => this.setState({ food: res.parsed[0].food.foodId }))
+      .then(data => {
         return fetch(foodPost, {
           method: "post",
           headers: {
@@ -38,33 +36,33 @@ class Search extends Component {
               }
             ]
           })
-        }).then(res => res.json()).then((res)=>{
-            if(res.healthLabels.includes("PALEO")){
-                console.log("True")
-            }
-
-        else {
-            if(!res.healthLabels.includes("PALEO")){
-                console.log("nope")
-            }
-        }
         })
+          .then(res => res.json())
+          .then(res => {
+            if (res.healthLabels.includes("PALEO")) {
+              console.log("True");
+            } else {
+              if (!res.healthLabels.includes("PALEO")) {
+                console.log("nope");
+              }
+            }
+            this.setState({ searchParam: '' });
+          })
       });
   };
-
-
   render() {
     return (
       <Flex paddingBottom="xxLarge" justifyContent="center">
         <Flex.Item>
           <Form.Group>
-            <Input name="Search" type="text" onChange={this.onTextChange} />
+            <Input name="Search" type="text" onChange={this.onTextChange} value={this.state.searchParam }/>
           </Form.Group>
-          <Button variant="primary" onClick={this.makeReqs}>Search</Button>
+          <Button variant="primary" onClick={this.makeReqs}>
+            Search
+          </Button>
         </Flex.Item>
       </Flex>
     );
   }
 }
 export default Search;
-//   
