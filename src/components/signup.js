@@ -76,6 +76,7 @@ class SignUp extends Component {
                   label="Password"
                   name="password"
                   placeholder="Password"
+                  type="password"
                   onChange={this.onTextChange}
                 />
               </Form.Group>
