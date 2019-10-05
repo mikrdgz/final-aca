@@ -6,7 +6,7 @@ import {
     Panel,
     Button,
     H0,
-    H1
+    H1,
   } from "@bigcommerce/big-design";
 import ParagraphTextLeft from "./paragraphtextleft";
 import ParagraphTextRight from "./paragraphtextright";
@@ -47,8 +47,8 @@ class Home extends React.Component {
               <ParagraphTextLeft
                 image="undraw_hiking_d24r.png"
                 alt="image"
-                title="title"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                title="Is it paleo?"
+                text="Easily search your favorite foods to see if they're Paleo friendly! Our app provides a simple answer to a sometimes complicated question. Don’t worry about trying to read up on the various forms of the Paleo way of life, just search your favorite foods on the app and get the answer you need, and the nutritional value at the click of a button."
               />
             </div>
           </Text>
@@ -57,10 +57,10 @@ class Home extends React.Component {
           <Text>
             <div class="paragraph-container">
               <ParagraphTextRight
-                image="undraw_hiking_d24r.png"
+                image="undraw_percentages_0rur.png"
                 alt="image"
-                title="title here"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                title="Easily record your searches"
+                text="Save your most recent searches to your profile and keep a record of your diet for goal-setting or just insight into the overall make-up of your diet. "
               />
             </div>
           </Text>
@@ -69,10 +69,10 @@ class Home extends React.Component {
           <Text>
             <div class="paragraph-container">
               <ParagraphTextLeft
-                image="undraw_hiking_d24r.png"
+                image="undraw_fitness_tracker_3033.png"
                 alt="image"
-                title="title here"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                title="Keep track of your diet"
+                text="Making the Paleo diet a part of your everyday life has never been easier! Searching and saving the foods you eat on a daily basis will allow you to keep tabs on the overall health of your diet, and the nature of the foods you're eating. Take control of your diet, and easily make a lifestyle change!"
               />
             </div>
           </Text>
@@ -81,10 +81,10 @@ class Home extends React.Component {
           <Text>
             <div class="paragraph-container">
               <ParagraphTextRight
-                image="undraw_hiking_d24r.png"
+                image="undraw_finish_line_katerina_limpitsouni_xy20.png"
                 alt="image"
-                title="title here"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                title="Set attainable goals"
+                text="Use your saved foods to set attainable goals for your diet, and easily track your progress from your profile by saving foods from your searches."
               />
             </div>
           </Text>

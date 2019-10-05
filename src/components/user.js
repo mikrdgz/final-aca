@@ -17,13 +17,23 @@ import {Link} from "react-router-dom";
 
 
 class User extends React.Component {
+    state ={
+        localFoods: ""
+    }
+
+    componentDidMount(){
+        const foodInfo = JSON.parse(localStorage.getItem('foodInfo'));
+        this.setState ({localFoods: foodInfo})
+    }
+
     render(){
+        console.log('test: ', this.state.localFoods.ingredients)
         return (
 <div className="App">
         <Flex justifyContent="space-between" flexDirection="row">
           <Flex.Item>
             <H2>
-              <NavName name="sunshine" />
+              <NavName name="Kiley" />
             </H2>
           </Flex.Item>
           <Flex.Item>
@@ -35,7 +45,9 @@ class User extends React.Component {
         <div class="navspace">
           <Text>
             <H0>My saved foods</H0>
-            <H1>Here are saved foods</H1>
+            
+            
+            <p>{this.state.localFoods.calories}</p>
           </Text>
         </div>
         </div>

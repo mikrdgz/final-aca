@@ -46,7 +46,6 @@ class Search extends Component {
           .then(res => {
            console.log('Res: ', res);
             this.setState({foodInfo: res})
-
             if (res.healthLabels.includes("PALEO")) {
             this.setState({result: "is paleo!"})
             } else {
@@ -54,8 +53,7 @@ class Search extends Component {
                 this.setState({result: "is not paleo!"})
               }
             }
-            this.setState({searchParam: ''})
-            
+            this.setState({searchParam: ''})            
           })
       });
   };

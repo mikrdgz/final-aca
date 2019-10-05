@@ -7,13 +7,17 @@ import Search from './search';
 
 class ResultModal extends React.Component {
 
+
+
     state = {
         isOpen: true
 
     }
     
       closeModal = () => {
+        localStorage.setItem("foodInfo", JSON.stringify(this.props.foodInfo));
         this.setState({ isOpen: false });
+
       };  
 
     render(){
