@@ -44,10 +44,12 @@ class User extends React.Component {
         </Flex>
         <div class="navspace">
           <Text>
-            <H0>My saved foods</H0>
+            <H0>My saved paleo foods</H0>
             
             
-            <p>{this.state.localFoods.calories}</p>
+            <H1>
+                Egg:<br/>{this.state.localFoods.calories} Calories
+            </H1>
           </Text>
         </div>
         </div>
