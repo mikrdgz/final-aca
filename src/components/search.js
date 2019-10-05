@@ -10,11 +10,6 @@ class Search extends Component {
     foodInfo: {}
   };
 
-  //componentWillUpdate =()=>{
-      
-        //document.getElementById('resultDiv').innerHTML = `${this.state.result}`
-  //}
-
   onTextChange = e => {
     this.setState({ searchParam: e.target.value });
   };

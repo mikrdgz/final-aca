@@ -4,7 +4,6 @@ import { Button,
     H1,
     Text } from "@bigcommerce/big-design";
 import Search from './search';
-import { tsThisType } from '@babel/types';
 
 class ResultModal extends React.Component {
 
@@ -33,8 +32,8 @@ class ResultModal extends React.Component {
                 <Modal.Body>
                     <H1>{this.props.foodInfo.ingredients[0].parsed[0].food} {this.props.result}</H1>
                     Calories: {this.props.foodInfo.calories}<br />
-                    Fat: {this.props.foodInfo.totalNutrients.FAT.quantity} g <br />
-                    Protein: {this.props.foodInfo.totalNutrients.PROCNT.quantity} g <br />
+                    Fat: {Number(this.props.foodInfo.totalNutrients.FAT.quantity).toFixed(2)} g <br />
+                    Protein: {Number(this.props.foodInfo.totalNutrients.PROCNT.quantity).toFixed(2)} g <br />
                 </Modal.Body>
       
                 <Modal.Actions>
@@ -49,3 +48,5 @@ class ResultModal extends React.Component {
   }
 
   export default ResultModal
+
+  
