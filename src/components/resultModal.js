@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button,
     Modal,
-    Form,
-    Input } from "@bigcommerce/big-design";
+    H1,
+    Text } from "@bigcommerce/big-design";
 import Search from './search';
+import { tsThisType } from '@babel/types';
 
 class ResultModal extends React.Component {
 
@@ -17,7 +18,7 @@ class ResultModal extends React.Component {
       };  
 
     render(){
-        console.log('props',this.props)
+        console.log('props',this.props);
         return (
             <>
       
@@ -30,13 +31,15 @@ class ResultModal extends React.Component {
                 <Modal.Header>Is it Paleo?</Modal.Header>
       
                 <Modal.Body>
-                    Paleo: {this.props.result}
+                    <H1>{this.props.foodInfo.ingredients[0].parsed[0].food} {this.props.result}</H1>
+                    Calories: {this.props.foodInfo.calories}<br />
+                    Fat: {this.props.foodInfo.totalNutrients.FAT.quantity} g <br />
+                    Protein: {this.props.foodInfo.totalNutrients.PROCNT.quantity} g <br />
                 </Modal.Body>
       
                 <Modal.Actions>
-                  <Button variant="subtle" onClick={this.closeModal}>
-                    OK
-                  </Button>
+                <Button variant="subtle" onClick={this.closeModal}>SAVE</Button>
+                  <Button variant="subtle" onClick={this.closeModal}>OK</Button>
     
                 </Modal.Actions>
               </Modal>

@@ -30,7 +30,7 @@ class Home extends React.Component {
           <Flex.Item>
             <SignUp />
             <SignIn />
-            <Button variant="primary"><Link to="/user">My Foods</Link></Button>
+            <Button variant="secondary"><Link to="/user">my foods</Link></Button>
           </Flex.Item>
         </Flex>
         <div class="navspace">
@@ -47,7 +47,7 @@ class Home extends React.Component {
               <ParagraphTextLeft
                 image="undraw_hiking_d24r.png"
                 alt="image"
-                title="title here"
+                title="title"
                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
               />
             </div>

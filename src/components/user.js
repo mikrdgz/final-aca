@@ -13,6 +13,7 @@ import {
 import NavName from "./navigation";
 import SignUp from "./signup";
 import SignIn from "./signin";
+import {Link} from "react-router-dom";
 
 
 class User extends React.Component {
@@ -28,6 +29,7 @@ class User extends React.Component {
           <Flex.Item>
             <SignUp />
             <SignIn />
+            <Button variant="secondary"><Link to="/">home</Link></Button>
           </Flex.Item>
         </Flex>
         <div class="navspace">
